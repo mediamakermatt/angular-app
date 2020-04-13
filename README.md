@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Custom Notes
+
+Error: `ng : File C:\Users\<CurrentUser>\AppData\Roaming\npm\ng.ps1 cannot be loaded.`
+
+If you are running any angular command e.g. ng serve, ng build, ng new, ng generate etc. from Visual Studio Code Terminal or from command prompt and getting above error then you can go through the below solution to fix above issue.
+
+Solution: Run the following command from the same terminal or command prompt and re-run the ng command to check if it works on your machine:
+
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
