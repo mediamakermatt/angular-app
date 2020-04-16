@@ -95,3 +95,26 @@ In package.json, change the “start” command to node server.js so it becomes:
 `"start": "node server.js"`
 
 You should not run into any issue if using Angular 9 following these methods.
+
+## TODO / WIP:
+
+Downloaded SQL Server 2019 from Microsoft:
+
+`https://www.microsoft.com/en-us/sql-server/sql-server-downloads`
+
+Added an example database to assets folder:
+
+`src/assets/databases/mysqlsampledatabase.sql`
+
+1) Learn to extract data from sample sql file and turn it into JSON.
+2) Learn how to reverse engineer to be able to build own databases.
+3) Use the JSON from databases to create an API.
+4) Use the API to build a project on, possibily including:
+
+<ul>
+    <li>Searches</li>
+    <li>Auto Completes</li>
+    <li>Filters</li>
+    <li>Custom Groups</li>
+    <li>Specialized Results</li>
+</ul>
