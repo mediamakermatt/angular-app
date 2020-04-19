@@ -118,3 +118,76 @@ Added an example database to assets folder:
     <li>Custom Groups</li>
     <li>Specialized Results</li>
 </ul>
+
+## SQL Server 2019 Build:
+
+Instance Name: `MSSQLSERVER`
+SQL Administrators: `MediaMakerMatt-PC\MediaMakerMatt`
+Features Installed: `SQLENGINE`
+Version: `15.0.2000.5 RTM`
+
+Connection String: `Server=localhost;Database=master;Trusted_Connection=True;`
+SQL Server Install Log Folder: `C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20200416_163704`
+Installation Media Folder: `C:\SQL2019\Developer_ENU`
+Installation Resources Folder: `C:\Program Files\Microsoft SQL Server\150\SSEI\Resources`
+
+On setup, select all features in `Feature Selection`. The instance root directory is: `C:\Program Files\Microsoft SQL Server\`.
+
+On Instance configuration, check Named instance. For Named instance and Instance ID, to keep things simple, I used the same name and added a pin of numbers to the end, in this case `MSSQLSERVER3487`. 
+
+On PolyBase configuration, I chose to `Use this SQL Server as standalone PolyBase-enabled instance`. It defaulted me with a port range for PolyBase services, so I kept it at the default: `16450-16460`.
+
+On Java Install Location, I chose to `Install Open JRE 11.0.3 included with this installation`.
+
+For Server Configuration, I left everything default and clicked Next.
+
+For Database Engine Configuration, I left everything default except at the bottom, I clicked Add Current User to `Specify SQL Server Administrators`.
+
+For Analysis Services Configuration, I did the same, just added myself for `Specify which users have administrative permissions for Analysis Services`. I made sure to have Tabular mode checked as it was default.
+
+Things chosen for Integration Services Scale Out Configuration:
+
+Port: `8391`
+Create newe SSL Certificate: `CN=mediamakermatt-pc; CN=192.168.1.232`
+Master Node Endpoint: `https://mediamakermatt-pc:8391`
+
+For Distributed Replay Controller, I just added myself as the user and clicked Next, a pattern is emerging for many of these setup options.
+
+For Distributed Replay Client, I added myself for the Controller Name: `MediaMakerMatt`
+Working Directory: `C:\Program Files (x86)\Microsoft SQL Server\DReplayClient\WorkingDir\`
+Result Directory: `C:\Program Files (x86)\Microsoft SQL Server\DReplayClient\ResultDir\`
+
+Clicked Accept to consent to install Microsoft R Open and Python.
+
+For offline installation of Microsoft Machine Learning Server Components:
+
+<ul>
+    <li>Setup was unable to contact the download server, provide the location installation files and click 'Next'. The files can be downloaded from: </li>
+    <li>https://go.microsoft.com/fwlink/?LinkId=2085686&lcid=1033</li>
+    <li>https://go.microsoft.com/fwlink/?LinkId=2085792&lcid=1033</li>
+    <li>https://go.microsoft.com/fwlink/?LinkId=2085793&lcid=1033</li>
+    <li>https://go.microsoft.com/fwlink/?LinkId=2085685&lcid=1033</li>
+</ul>
+
+So what I did was revisit where SQL Server was housed on my computer, and added a custom-resources folder: `C:\Program Files\Microsoft SQL Server\custom-resources` which I added the files to. I then pointed the install path to that folder and clicked Next. It built me a configuration structure with the file path: `C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20200416_164515\ConfigurationFile.ini` which I installed.
+
+Computer restart required to complete the installation.
+
+Now I am able to search in my computer typing `SQL Server` for different resources pertaining to this installation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
